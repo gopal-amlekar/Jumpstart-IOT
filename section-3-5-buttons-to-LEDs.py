@@ -16,7 +16,7 @@ for led in leds:
 	GPIO.setup(led, GPIO.OUT)
 	
 for btn in buttons:
-	GPIO.setup(btn, GPIO.IN)
+	GPIO.setup(btn, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 time.sleep(0.5) 
 counter = 0;
