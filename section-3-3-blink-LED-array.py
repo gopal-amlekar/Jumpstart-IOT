@@ -11,23 +11,22 @@ print("Setting Broadcom Mode")
 GPIO.setmode(GPIO.BCM) # Broadcom pin-numbering scheme
 
 for led in ledArray:
-    GPIO.setup(led, GPIO.OUT) 
+    GPIO.setup(led, GPIO.OUT)
 
 print("Here we go! Press CTRL+C to exit")
 
 try:
     while 1:
-            print ("OFF");
-            
-            for led in ledArray:
-                GPIO.output(led, GPIO.LOW)
-            time.sleep(1)
-            
-            print ("ON");            
-            
-            for led in ledArray:
-                GPIO.output(led, GPIO.HIGH)
-            time.sleep(1)
-             
+        print ("OFF");
+        for led in ledArray:
+            GPIO.output(led, GPIO.LOW)
+        time.sleep(1)
+
+        print ("ON");
+
+        for led in ledArray:
+            GPIO.output(led, GPIO.HIGH)
+        time.sleep(1)
+
 except KeyboardInterrupt: # If CTRL+C is pressed, exit cleanly:
     GPIO.cleanup() # cleanup all GPIO
